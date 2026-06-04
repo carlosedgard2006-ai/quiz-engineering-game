@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="menu" class="container">
+  <h1>🎮 Quiz Game</h1>
+
+  <input id="name" placeholder="Seu nome">
+
+  <br><br>
+
+  <button onclick="solo()">🎯 Solo</button>
+  <button onclick="createRoom()">👥 Criar Sala</button>
+
+  <br><br>
+
+  <input id="code" placeholder="Código da sala">
+  <button onclick="joinRoom()">Entrar</button>
+
+  <h2 id="roomCode"></h2>
+
+  <button onclick="startGame()">▶ START</button>
+</div>
+
+<div id="game" class="hidden container">
+
+  <div class="timer-bar" id="timer"></div>
+
+  <h2 id="question"></h2>
+  <div id="options"></div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="client.js"></script>
+
+</body>
+</html>
