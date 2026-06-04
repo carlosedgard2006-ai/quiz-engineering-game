@@ -1,8 +1,4 @@
-const socket = io(
-  location.hostname === "localhost"
-    ? `http://${location.hostname}:3000`
-    : undefined
-);
+const socket = io(window.location.origin);
 
 let currentRoom = "";
 let score = 0;
@@ -65,7 +61,6 @@ socket.on("question", (q) => {
 
   const optionsDiv = document.getElementById("options");
 
-  // 🔥 mostra pontuação + nível
   optionsDiv.innerHTML = `
     <h3>⭐ Pontuação: ${score}</h3>
     <h4>${getNivel(score)}</h4>
